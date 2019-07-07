@@ -1,0 +1,6 @@
+{% for article in timeline_articles %}
+<li>Date: {{ article.date }}</li>
+<li>Text: {{ article.text }}</li>
+<li>Url: https://facebook.com{{ article.url }}</li>
+<li>Source: {{ article.source }}</li>
+{% endfor %}

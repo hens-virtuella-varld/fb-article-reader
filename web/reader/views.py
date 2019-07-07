@@ -1,5 +1,8 @@
-from django.http import HttpResponse
+from django.shortcuts import render
+
+from process_csv import process_csv
 
 
 def index(request):
-    return HttpResponse("Hello, world. You're at the reader index.")
+    context = {'timeline_articles': process_csv()}
+    return render(request, 'reader/index.html', context)
