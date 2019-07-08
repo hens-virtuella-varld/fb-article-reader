@@ -1,6 +1,12 @@
-{% for article in timeline_articles %}
-<li>Date: {{ article.date }}</li>
-<li>Text: {{ article.text }}</li>
-<li>Url: https://facebook.com{{ article.url }}</li>
-<li>Source: {{ article.source }}</li>
+<link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+  crossorigin="anonymous"
+/>
+
+{% for page in pages %}
+<li>
+  <a href="{% url 'detail' page %}">{{ page }}</a>
+</li>
 {% endfor %}

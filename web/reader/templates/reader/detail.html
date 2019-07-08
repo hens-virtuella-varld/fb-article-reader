@@ -1,0 +1,33 @@
+<link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+  crossorigin="anonymous"
+/>
+<style>
+  .wrapper {
+    width: 60%;
+    margin-left: 20%;
+  }
+</style>
+
+<div class="wrapper">
+  {% for article in timeline_articles %}
+
+  <div class="card border-secondary">
+    <div class="card-body">
+      <h5 class="card-title">{{ article.date }}</h5>
+      <p class="card-text">{{ article.text }}</p>
+      <div class="card-footer text-muted">Source: {{ article.source }}</div>
+      <a
+        href="https://facebook.com{{ article.url }}"
+        class="btn btn-secondary btn-sm active"
+        role="button"
+        aria-pressed="true"
+        >FB Link</a
+      >
+    </div>
+  </div>
+
+  {% endfor %}
+</div>
