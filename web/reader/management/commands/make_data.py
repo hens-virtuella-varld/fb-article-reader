@@ -1,3 +1,6 @@
+'''
+make_data loads fan-page and article data into database.
+'''
 import csv
 import urllib.request
 from bs4 import BeautifulSoup
