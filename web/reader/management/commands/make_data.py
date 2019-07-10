@@ -21,8 +21,9 @@ class Command(BaseCommand):
                 fanpage = FanPage.objects.create(name=fanpage_name)
 
                 timeline_articles = process_csv(row[0]+'.csv')
-                fanpage.article_set.bulk_create([
+                Article.objects.bulk_create([
                     Article(
+                        fanpage=fanpage,
                         time=article['date'],
                         url=article['url'],
                         text=article['text']
