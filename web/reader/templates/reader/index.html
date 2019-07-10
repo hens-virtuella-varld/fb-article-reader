@@ -4,11 +4,29 @@
   integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
   crossorigin="anonymous"
 />
+<style>
+  .wrapper {
+    width: 60%;
+    margin-left: 20%;
+  }
+  body {
+    background-color: #000000;
+  }
+</style>
 
-{% for fanpage in fanpage_list %}
-<li>
-  <a href="{% url 'detail' fanpage.pk %}">
-    {{ fanpage.name }}, article number: {{ fanpage.article_set.count }}</a
-  >
-</li>
-{% endfor %}
+<div class="wrapper">
+  <ul class="list-group">
+    {% for fanpage in fanpage_list %}
+    <a href="{% url 'detail' fanpage.pk %}">
+      <li
+        class="list-group-item d-flex justify-content-between align-items-center"
+      >
+        {{ fanpage.name }}
+        <span class="badge badge-primary badge-pill">
+          {{ fanpage.article_set.count }}
+        </span>
+      </li>
+    </a>
+    {% endfor %}
+  </ul>
+</div>
