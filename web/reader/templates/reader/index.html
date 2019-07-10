@@ -7,6 +7,8 @@
 
 {% for fanpage in fanpage_list %}
 <li>
-  <a href="{% url 'detail' fanpage.pk %}">{{ fanpage.name }}</a>
+  <a href="{% url 'detail' fanpage.pk %}">
+    {{ fanpage.name }}, article number: {{ fanpage.article_set.count }}</a
+  >
 </li>
 {% endfor %}

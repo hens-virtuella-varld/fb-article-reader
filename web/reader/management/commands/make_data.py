@@ -4,10 +4,10 @@ make_data loads fan-page and article data into database.
 import csv
 import urllib.request
 from bs4 import BeautifulSoup
-
 from django.core.management.base import BaseCommand, CommandError
-from reader.models import FanPage, Article
+
 from process_csv import process_csv
+from reader.models import FanPage, Article
 
 
 class Command(BaseCommand):
