@@ -5,8 +5,8 @@
   crossorigin="anonymous"
 />
 
-{% for page in pages %}
+{% for fanpage in fanpage_list %}
 <li>
-  <a href="{% url 'detail' page %}">{{ page }}</a>
+  <a href="{% url 'detail' fanpage.pk %}">{{ fanpage.name }}</a>
 </li>
 {% endfor %}

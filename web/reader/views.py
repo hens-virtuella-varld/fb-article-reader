@@ -1,14 +1,19 @@
 from os import listdir
 from django.shortcuts import render
+from django.views import generic
 
 from process_csv import process_csv
+from .models import FanPage
 
 
-def index(request):
-    context = {'pages': listdir('csv')}
-    return render(request, 'reader/index.html', context)
+class IndexView(generic.ListView):
+    template_name = 'reader/index.html'
+    model = FanPage
 
 
-def detail(request, page):
-    context = {'timeline_articles': process_csv(page)}
-    return render(request, 'reader/detail.html', context)
+class DetailView(generic.DetailView):
+    pass
+
+# def detail(request, page):
+#     context = {'timeline_articles': process_csv(page)}
+#     return render(request, 'reader/detail.html', context)
