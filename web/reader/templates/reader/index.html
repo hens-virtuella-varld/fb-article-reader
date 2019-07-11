@@ -4,11 +4,9 @@
   integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
   crossorigin="anonymous"
 />
-<style>
-  body {
-    background-color: #000000;
-  }
-</style>
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'reader/style.css' %}" />
 
 <div class="container">
   <div class="row justify-content-center">
@@ -30,3 +28,5 @@
     </div>
   </div>
 </div>
+
+
