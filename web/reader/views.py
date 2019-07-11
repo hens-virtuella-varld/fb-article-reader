@@ -12,8 +12,5 @@ class IndexView(generic.ListView):
 
 
 class DetailView(generic.DetailView):
-    pass
-
-# def detail(request, page):
-#     context = {'timeline_articles': process_csv(page)}
-#     return render(request, 'reader/detail.html', context)
+    template_name = 'reader/detail.html'
+    model = FanPage
